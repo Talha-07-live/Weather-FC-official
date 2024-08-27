@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizard Football Club</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-image: url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f9a825;
+        }
+
+        .hero-section h2 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #f9a825;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ffa000;
+        }
+
+        .about-section, .team-section, .schedule-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .player-card {
+            margin: 20px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .player-card img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding-bottom: 20px;
+        }
+
+        .contact-info h3, .social-media h3 {
+            margin-bottom: 10px;
+        }
+
+        .social-media a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #f9a825;
+        }
+
+        footer p {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Wizard FC</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero-section" id="home">
+            <h2>Welcome to Wizard Football Club</h2>
+            <p>The Home of Champions</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>Wizard FC is a premier football club with a rich history of success and a commitment to excellence. We pride ourselves on developing talented players and competing at the highest levels of the sport.</p>
+    </section>
+
+    <section id="team" class="team-section">
+        <h2>Our Team</h2>
+        <div class="team-container">
+            <!-- Add player profiles here -->
+            <div class="player-card">
+                <img src="player1.jpg" alt="Player Name">
+                <h3>Player Name</h3>
+                <p>Position</p>
+            </div>
+            <div class="player-card">
+                <img src="player2.jpg" alt="Player Name">
+                <h3>Player Name</h3>
+                <p>Position</p>
+            </div>
+            <!-- More players -->
+        </div>
+    </section>
+
+    <section id="schedule" class="schedule-section">
+        <h2>Match Schedule</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Opponent</th>
+                    <th>Venue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>25th August</td>
+                    <td>Rivals FC</td>
+                    <td>Wizard Stadium</td>
+                </tr>
+                <!-- More matches -->
+            </tbody>
+        </table>
+    </section>
+
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Email</h3>
+                <p>wizardfc@example.com</p>
+            </div>
+            <div class="contact-info">
+                <h3>Phone</h3>
+                <p>+123 456 7890</p>
+            </div>
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <p>&copy; 2024 Wizard Football Club. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for any dynamic elements can be added here.
+        // For example, smooth scrolling for navigation links.
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
