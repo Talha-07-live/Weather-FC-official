@@ -16,6 +16,7 @@
             font-family: 'Arial', sans-serif;
             color: #333;
             line-height: 1.6;
+            background-color: #f4f4f4;
         }
 
         header {
@@ -35,6 +36,7 @@
             position: fixed;
             width: 100%;
             top: 0;
+            z-index: 1000;
         }
 
         .logo h1 {
@@ -62,6 +64,14 @@
             color: #f9a825;
         }
 
+        .hero-section {
+            padding: 100px 0;
+            background-image: url('welcome-bg.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
         .hero-section h2 {
             font-size: 50px;
             margin-bottom: 20px;
@@ -85,7 +95,22 @@
             background-color: #ffa000;
         }
 
-        .about-section, .team-section, .schedule-section {
+        .about-section {
+            padding: 50px 20px;
+            text-align: center;
+            background-image: url('about-bg.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        .about-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+
+        .team-section, .schedule-section, .results-section, .album-section {
             padding: 50px 20px;
             text-align: center;
         }
@@ -100,11 +125,103 @@
             margin: 20px;
             width: 200px;
             text-align: center;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .player-card:hover {
+            transform: translateY(-10px);
         }
 
         .player-card img {
             width: 100%;
-            border-radius: 50%;
+            border-bottom: 4px solid #f9a825;
+        }
+
+        .player-card h3 {
+            margin: 15px 0 5px;
+            font-size: 20px;
+        }
+
+        .player-card p {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .schedule-section table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+        }
+
+        .schedule-section th, .schedule-section td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .schedule-section th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .results-section .results-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .results-box {
+            margin: 20px;
+            width: 250px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .results-box h3 {
+            font-size: 24px;
+            color: #f9a825;
+            margin-bottom: 10px;
+        }
+
+        .results-box p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .album-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .album-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .album-item {
+            margin: 15px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .album-item img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .album-item img:hover {
+            transform: scale(1.05);
         }
 
         footer {
@@ -152,6 +269,8 @@
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#albums">Albums</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -170,18 +289,23 @@
     <section id="team" class="team-section">
         <h2>Our Team</h2>
         <div class="team-container">
-            <!-- Add player profiles here -->
+            <!-- Player profiles -->
             <div class="player-card">
-                <img src="player1.jpg" alt="Player Name">
-                <h3>Player Name</h3>
-                <p>Position</p>
+                <img src="player1.jpg" alt="John Doe">
+                <h3>John Doe</h3>
+                <p>Forward</p>
             </div>
             <div class="player-card">
-                <img src="player2.jpg" alt="Player Name">
-                <h3>Player Name</h3>
-                <p>Position</p>
+                <img src="player2.jpg" alt="Jane Smith">
+                <h3>Jane Smith</h3>
+                <p>Midfielder</p>
             </div>
-            <!-- More players -->
+            <div class="player-card">
+                <img src="player3.jpg" alt="Mike Johnson">
+                <h3>Mike Johnson</h3>
+                <p>Defender</p>
+            </div>
+            <!-- Add more players as needed -->
         </div>
     </section>
 
@@ -201,9 +325,45 @@
                     <td>Rivals FC</td>
                     <td>Wizard Stadium</td>
                 </tr>
-                <!-- More matches -->
+                <!-- Add more matches -->
             </tbody>
         </table>
+    </section>
+
+    <section id="results" class="results-section">
+        <h2>Recent Results</h2>
+        <div class="results-container">
+            <div class="results-box">
+                <h3>Wizard FC vs Rivals FC</h3>
+                <p>Score: 3-2</p>
+                <p>Result: Win</p>
+            </div>
+            <div class="results-box">
+                <h3>Wizard FC vs Legends FC</h3>
+                <p>Score: 1-1</p>
+                <p>Result: Draw</p>
+            </div>
+            <!-- Add more results as needed -->
+        </div>
+    </section>
+
+    <section id="albums" class="album-section">
+        <h2>Our Albums</h2>
+        <div class="album-container">
+            <div class="album-item">
+                <img src="album1.jpg" alt="Match Day Album">
+                <p>Match Day Highlights</p>
+            </div>
+            <div class="album-item">
+                <img src="album2.jpg" alt="Training Sessions">
+                <p>Training Sessions</p>
+            </div>
+            <div class="album-item">
+                <img src="album3.jpg" alt="Team Events">
+                <p>Team Events</p>
+            </div>
+            <!-- Add more albums as needed -->
+        </div>
     </section>
 
     <footer id="contact">
@@ -228,8 +388,7 @@
     </footer>
 
     <script>
-        // JavaScript for any dynamic elements can be added here.
-        // For example, smooth scrolling for navigation links.
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -241,4 +400,5 @@
         });
     </script>
 </body>
-</html>
+    </html>
+    
