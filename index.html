@@ -26,6 +26,7 @@
             color: #fff;
             text-align: center;
             padding: 100px 0;
+            margin-top: 0;
         }
 
         nav {
@@ -65,11 +66,12 @@
         }
 
         .hero-section {
-            padding: 330px 0px;
+            padding: 200px 0px; /* Reduced padding to minimize gap */
             background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6tDnLjrpe1qqadJITvBrCcOjnYff0fSaODw&usqp=CAU'); /* Replace with your image */
             background-size: cover;
             background-position: center;
             color: #fff;
+            margin-top: 0; /* Ensures it touches the nav bar */
         }
 
         .hero-section h2 {
@@ -96,7 +98,7 @@
         }
 
         .about-section {
-            padding: 330px 0px;
+            padding: 100px 20px; /* Reduced padding */
             text-align: center;
             background-image: url('https://s10.gifyu.com/images/So6nT.jpg'); /* Replace with your image */
             background-size: cover;
@@ -316,89 +318,89 @@
                 <tr>
                     <th>Date</th>
                     <th>Opponent</th>
-                    <th>Venue</th>
+                    <th>Location</th>
+                    <th>Time</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>25th August</td>
-                    <td>Rivals FC</td>
-                    <td>Wizard Stadium</td>
+                    <td>August 15, 2024</td>
+                    <td>Team A</td>
+                    <td>Home</td>
+                    <td>7:00 PM</td>
                 </tr>
-                <!-- Add more matches -->
+                <tr>
+                    <td>August 22, 2024</td>
+                    <td>Team B</td>
+                    <td>Away</td>
+                    <td>6:00 PM</td>
+                </tr>
+                <tr>
+                    <td>August 29, 2024</td>
+                    <td>Team C</td>
+                    <td>Home</td>
+                    <td>8:00 PM</td>
+                </tr>
+                <!-- Add more matches as needed -->
             </tbody>
         </table>
     </section>
 
     <section id="results" class="results-section">
-        <h2>Recent Results</h2>
+        <h2>Match Results</h2>
         <div class="results-container">
+            <!-- Win/Loss boxes -->
             <div class="results-box">
-                <h3>Wizard FC vs Rivals FC</h3>
-                <p>Score: 3-2</p>
-                <p>Result: Win</p>
+                <h3>Win</h3>
+                <p>Team A: 2 - 1</p>
+                <p>Wizard FC</p>
             </div>
             <div class="results-box">
-                <h3>Wizard FC vs Legends FC</h3>
-                <p>Score: 1-1</p>
-                <p>Result: Draw</p>
+                <h3>Loss</h3>
+                <p>Team B: 3 - 2</p>
+                <p>Wizard FC</p>
+            </div>
+            <div class="results-box">
+                <h3>Win</h3>
+                <p>Team C: 0 - 4</p>
+                <p>Wizard FC</p>
             </div>
             <!-- Add more results as needed -->
         </div>
     </section>
 
     <section id="albums" class="album-section">
-        <h2>Our Albums</h2>
+        <h2>Photo Album</h2>
         <div class="album-container">
+            <!-- Photo albums -->
             <div class="album-item">
-                <img src="album1.jpg" alt="Match Day Album">
-                <p>Match Day Highlights</p>
+                <img src="album1.jpg" alt="Album 1">
             </div>
             <div class="album-item">
-                <img src="album2.jpg" alt="Training Sessions">
-                <p>Training Sessions</p>
+                <img src="album2.jpg" alt="Album 2">
             </div>
             <div class="album-item">
-                <img src="album3.jpg" alt="Team Events">
-                <p>Team Events</p>
+                <img src="album3.jpg" alt="Album 3">
             </div>
             <!-- Add more albums as needed -->
         </div>
     </section>
 
     <footer id="contact">
-        <h2>Contact Us</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <h3>Email</h3>
-                <p>wizardfc@example.com</p>
-            </div>
-            <div class="contact-info">
-                <h3>Phone</h3>
-                <p>+123 456 7890</p>
+                <h3>Contact Us</h3>
+                <p>Email: info@wizardfc.com</p>
+                <p>Phone: +123 456 7890</p>
             </div>
             <div class="social-media">
                 <h3>Follow Us</h3>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/your-page-link">Facebook</a>
+                <a href="https://twitter.com/your-page-link">Twitter</a>
+                <a href="https://www.instagram.com/your-page-link">Instagram</a>
             </div>
         </div>
-        <p>&copy; 2024 Wizard Football Club. • Made By ABU TALHA RAJ All Rights Reserved.</p>
+        <p>&copy; 2024 Wizard Football Club. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
-    </html>
-    
+</html>
