@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizard Football Club</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-image: url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 13px 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 12px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffa000;
+        }
+
+        .hero-section {
+            padding: 330px 0px;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6tDnLjrpe1qqadJITvBrCcOjnYff0fSaODw&usqp=CAU'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        .hero-section h2 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #f9a825;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ffa000;
+        }
+
+        .about-section {
+            padding: 330px 0px;
+            text-align: center;
+            background-image: url('https://s10.gifyu.com/images/So6nT.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        .about-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+
+        .team-section, .schedule-section, .results-section, .album-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .player-card {
+            margin: 20px;
+            width: 200px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .player-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .player-card img {
+            width: 100%;
+            border-bottom: 4px solid #f9a825;
+        }
+
+        .player-card h3 {
+            margin: 15px 0 5px;
+            font-size: 20px;
+        }
+
+        .player-card p {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .schedule-section table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+        }
+
+        .schedule-section th, .schedule-section td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .schedule-section th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .results-section .results-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .results-box {
+            margin: 20px;
+            width: 250px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .results-box h3 {
+            font-size: 24px;
+            color: #f9a825;
+            margin-bottom: 10px;
+        }
+
+        .results-box p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .album-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .album-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .album-item {
+            margin: 15px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .album-item img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .album-item img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding-bottom: 20px;
+        }
+
+        .contact-info h3, .social-media h3 {
+            margin-bottom: 10px;
+        }
+
+        .social-media a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #f9a825;
+        }
+
+        footer p {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#albums">Albums</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero-section" id="home">
+            <h2>Welcome to Wizard Football Club</h2>
+            <p>The Home of Champions</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>Wizard FC is a premier football club with a rich history of success and a commitment to excellence. We pride ourselves on developing talented players and competing at the highest levels of the sport.</p>
+    </section>
+
+    <section id="team" class="team-section">
+        <h2>Our Team</h2>
+        <div class="team-container">
+            <!-- Player profiles -->
+            <div class="player-card">
+                <img src="player1.jpg" alt="John Doe">
+                <h3>John Doe</h3>
+                <p>Forward</p>
+            </div>
+            <div class="player-card">
+                <img src="player2.jpg" alt="Jane Smith">
+                <h3>Jane Smith</h3>
+                <p>Midfielder</p>
+            </div>
+            <div class="player-card">
+                <img src="player3.jpg" alt="Mike Johnson">
+                <h3>Mike Johnson</h3>
+                <p>Defender</p>
+            </div>
+            <!-- Add more players as needed -->
+        </div>
+    </section>
+
+    <section id="schedule" class="schedule-section">
+        <h2>Match Schedule</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Opponent</th>
+                    <th>Venue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>25th August</td>
+                    <td>Rivals FC</td>
+                    <td>Wizard Stadium</td>
+                </tr>
+                <!-- Add more matches -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="results" class="results-section">
+        <h2>Recent Results</h2>
+        <div class="results-container">
+            <div class="results-box">
+                <h3>Wizard FC vs Rivals FC</h3>
+                <p>Score: 3-2</p>
+                <p>Result: Win</p>
+            </div>
+            <div class="results-box">
+                <h3>Wizard FC vs Legends FC</h3>
+                <p>Score: 1-1</p>
+                <p>Result: Draw</p>
+            </div>
+            <!-- Add more results as needed -->
+        </div>
+    </section>
+
+    <section id="albums" class="album-section">
+        <h2>Our Albums</h2>
+        <div class="album-container">
+            <div class="album-item">
+                <img src="album1.jpg" alt="Match Day Album">
+                <p>Match Day Highlights</p>
+            </div>
+            <div class="album-item">
+                <img src="album2.jpg" alt="Training Sessions">
+                <p>Training Sessions</p>
+            </div>
+            <div class="album-item">
+                <img src="album3.jpg" alt="Team Events">
+                <p>Team Events</p>
+            </div>
+            <!-- Add more albums as needed -->
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Email</h3>
+                <p>wizardfc@example.com</p>
+            </div>
+            <div class="contact-info">
+                <h3>Phone</h3>
+                <p>+123 456 7890</p>
+            </div>
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <p>&copy; 2024 Wizard Football Club. • Made By ABU TALHA RAJ All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+    </html>
+    
